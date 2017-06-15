@@ -3,19 +3,28 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <properties resource="jdbc.properties"/>
+
+    <typeAliases>
+        <typeAlias type="com.github.lishunxing.mybatis.entity.User" alias="User"/>
+        <package name="com.github.lishunxing.mybatis.entity"/>
+    </typeAliases>
     <!-- 环境  有两个选项 一个为development 开发模式  还有一种为work 工作模式-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
-                <property name="username" value="root"/>
-                <property name="password" value="123456"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.user}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
+        <!-- 配置XML注入SQL -->
         <mapper resource="mybatis/UserMapper.xml"/>
+        <!-- 配置注解注入SQL -->
+        <mapper class="com.github.lishunxing.mybatis.dao.RoleDao"/>
     </mappers>
 </configuration>
