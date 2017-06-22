@@ -2,7 +2,6 @@ package com.github.lishunxing.mybatis.dao;
 
 import com.github.lishunxing.mybatis.entity.User;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 
 /**
  * Created by admin on 2017/5/23.

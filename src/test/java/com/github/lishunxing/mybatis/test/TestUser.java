@@ -36,13 +36,6 @@ public class TestUser {
     }
 
     @Test
-    public void testAnnoationSelect(){
-        UserDao userDao=sqlSession.getMapper(UserDao.class);
-        User user=userDao.getById(1L);
-        System.out.println("result ==>"+user.toString());
-    }
-
-    @Test
     public void testDeleteUser(){
         String statement="com.github.lishunxing.mybatis.dao.UserDao.delete";
 

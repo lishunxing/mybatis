@@ -8,6 +8,7 @@ public class User {
     private Long id;
     private String name;
     private Integer age;
+    private Long roleId;
 
     public User(){}
 
@@ -41,12 +42,21 @@ public class User {
         this.age = age;
     }
 
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", roleId=" + roleId +
                 '}';
     }
 }
